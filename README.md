@@ -1,9 +1,14 @@
 
-# Prerequisites
+# Zero to Deep Learning book Docker launcher
+
+If you have purchased the _Zero to Deep Learning_ book (https://book.zerotodeeplearning.com/), and don't want to struggle with the Python build or dependencies to get up and running, read on.
+
+
+## Prerequisites
 
 You only need to have Docker installed.
 
-In the current directory, where this README was found, unzip the zero-to-deep-learning ZIP file, e.g.:
+In the current directory, where this README was found, unzip the _Zero to Deep Learning_ ZIP file, e.g.:
 
 ```
 $ unzip ../zero-to-deep-learning-1.1-code.zip
@@ -14,7 +19,7 @@ Archive:  ../zero-to-deep-learning-1.1-code.zip
 
 ## Docker build
 
-You only need to do this once:
+You only need to do this once (but it will take a while):
 
 ```
 $ docker build -t zero-to-deep-learning .
@@ -22,7 +27,7 @@ $ docker build -t zero-to-deep-learning .
 
 ## Docker run
 
-Assuming that nothing is already listening on port 8080 on your host machine, we will map that port into the Docker container, to be run like this:
+Assuming that nothing is already listening on port 8080 on your host machine, the following will (run the project in Docker and) map that port onto the Docker container(also listening on port 8080):
 ```
 $ docker run --rm -it -p 8080:8080 -v $PWD/full:/zero-to-deep-learning zero-to-deep-learning
 ```
@@ -45,7 +50,7 @@ A normal startup should output something similar to this:
      or http://127.0.0.1:8080/?token=e9beccc5f066a2ae6a24a759b14ad8220cbd72ff35101515
 ```
 
-Now point your browser to the last URL above, including the token in the URL as it was generated in your own machine (which will differ from the one that follows), e.g.: http://127.0.0.1:8080/?token=e9beccc5f066a2ae6a24a759b14ad8220cbd72ff35101515
+Now point your browser to the last URL above (your `token` will differ from the one above): http://127.0.0.1:8080/?token=XXXXXXXXXXXXXXX
 
 ... and start with the course.
 
